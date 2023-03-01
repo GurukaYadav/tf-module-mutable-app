@@ -5,3 +5,5 @@ variable "VPC_ID" {}
 variable "SSH_PORT" {}
 variable "WORKSTATION_IP" {}
 variable "COMPONENT" {}
+variable "PROJECT" {}
+variable "ENV" {}
