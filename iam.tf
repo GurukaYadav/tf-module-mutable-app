@@ -1,5 +1,5 @@
 resource "aws_iam_policy" "policy" {
-  name        = "${local.TAG_NAME}-${var.ENV}"
+  name        = "${local.TAG_NAME}-iam-policy"
   path        = "/"
   description = "Policy to the rabbitmq db-instance to access password from the aws secret manager"
 
@@ -31,7 +31,7 @@ resource "aws_iam_policy" "policy" {
 }
 
 resource "aws_iam_role" "role" {
-  name = "${local.TAG_NAME}-${var.ENV}"
+  name = "${local.TAG_NAME}-iam-role"
   assume_role_policy = jsonencode({
     Version = "2012-10-17"
     Statement = [
@@ -56,6 +56,6 @@ resource "aws_iam_role_policy_attachment" "role-policy-attach" {
 }
 
 resource "aws_iam_instance_profile" "profile" {
-  name = "${local.TAG_NAME}-${var.ENV}-instance-profile"
+  name = "${local.TAG_NAME}-instance-profile"
   role = aws_iam_role.role.name
 }

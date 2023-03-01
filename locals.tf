@@ -1,3 +1,3 @@
 locals {
-  TAG_NAME= "${var.PROJECT}-${var.COMPONENT}-${var.ENV}"
+  TAG_NAME = "${var.COMPONENT}-${var.ENV}"
 }
