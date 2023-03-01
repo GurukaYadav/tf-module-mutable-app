@@ -7,3 +7,4 @@ variable "WORKSTATION_IP" {}
 variable "COMPONENT" {}
 variable "PROJECT" {}
 variable "ENV" {}
+variable "PRIVATE_SUBNET_CIDR" {}
