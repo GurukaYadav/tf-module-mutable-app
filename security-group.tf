@@ -15,7 +15,7 @@ resource "aws_security_group" "sg" {
     description      = "TLS from VPC"
     from_port        = var.SSH_PORT
     to_port          = var.SSH_PORT
-    protocol         = "tcp"
+    protocol         = "SSH"
     cidr_blocks      = [var.WORKSTATION_IP]
   }
 
