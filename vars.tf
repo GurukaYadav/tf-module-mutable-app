@@ -11,3 +11,4 @@ variable "PRIVATE_SUBNET_CIDR" {}
 variable "INSTANCE_COUNT" {}
 variable "LB_ARN" {}
 variable "LB_TYPE" {}
+variable "PUBLIC_SUBNET_CIDR" {}
