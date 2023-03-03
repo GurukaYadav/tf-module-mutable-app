@@ -8,7 +8,7 @@ resource "aws_lb_listener" "front_end" {
   certificate_arn   = "arn:aws:acm:us-east-1:124374336606:certificate/534f69be-bcc8-444e-9eb3-973a2f0d10d3"
 
   default_action {
-    type             = "forward-to-frontend"
+    type             = "forward_to_frontend"
     target_group_arn = aws_lb_target_group.target-grp.arn
   }
 }
