@@ -9,3 +9,4 @@ variable "PROJECT" {}
 variable "ENV" {}
 variable "PRIVATE_SUBNET_CIDR" {}
 variable "INSTANCE_COUNT" {}
+variable "PUBLIC_LB_ARN" {}
