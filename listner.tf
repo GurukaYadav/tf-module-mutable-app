@@ -1,3 +1,4 @@
+//adding the frontend end instance target grp to public lb
 resource "aws_lb_listener" "front_end" {
   count = var.LB_TYPE == "public" ? 1 : 0
   load_balancer_arn = var.LB_ARN

@@ -20,3 +20,5 @@ resource "aws_lb_target_group_attachment" "attach" {
   target_id        = aws_spot_instance_request.instance.*.spot_instance_id
   port             = var.PORT
 }
+
+
