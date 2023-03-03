@@ -17,7 +17,7 @@ resource "aws_lb_target_group" "target-grp" {
 //attaching instances to target group
 resource "aws_lb_target_group_attachment" "attach" {
   target_group_arn = aws_lb_target_group.target-grp.arn
-  target_id        = aws_spot_instance_request.instance.*.spot_instance_id
+  target_id        = aws_spot_instance_request.instance.*.spot_instance_id[count.index]
   port             = var.PORT
 }
 
