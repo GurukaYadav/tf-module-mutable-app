@@ -1,7 +1,7 @@
 resource "aws_route53_record" "dns-name_components" {
   zone_id = var.PRIVATE_HOSTED_ZONE_ID
   name    = "${local.TAG_NAME}.roboshop.internal"
-  type    = "A"
+  type    = "CNAME"
   ttl     = 300
-  records = [aws_eip.lb.public_ip]
+  records = [var.PRIVATE_LB_DNS_NAME]
 }
