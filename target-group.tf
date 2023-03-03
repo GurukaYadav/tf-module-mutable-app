@@ -14,7 +14,7 @@ resource "aws_lb_target_group" "target-grp" {
   }
 }
 
-//attaching instances to target group
+#attaching instances to target group
 resource "aws_lb_target_group_attachment" "attach" {
   count = var.INSTANCE_COUNT
   target_group_arn = aws_lb_target_group.target-grp.arn
