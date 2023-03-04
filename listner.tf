@@ -38,7 +38,7 @@ resource "random_integer" "priority" {
 }
 
 resource "aws_lb_listener_rule" "backend" {
-  listener_arn = var.PRIVATE_LISTNER_ARN
+  listener_arn = var.PRIVATE_LISTENER_ARN
   priority     = random_integer.priority.result
 
   action {
