@@ -12,3 +12,43 @@ resource "aws_lb_listener" "front_end" {
     target_group_arn = aws_lb_target_group.target-grp.arn
   }
 }
+
+
+//adding the backend instances target grp to private lb
+resource "aws_lb_listener" "backend" {
+  count = var.LB_TYPE == "private" ? 1 : 0
+  load_balancer_arn = var.LB_ARN
+  port              = "80"
+  protocol          = "HTTP"
+
+  default_action {
+    type = "fixed-response"
+
+    fixed_response {
+      content_type = "text/plain"
+      message_body = "Fixed response content"
+      status_code  = "200"
+    }
+  }
+}
+
+resource "random_integer" "priority" {
+  min = 1
+  max = 50000
+}
+
+resource "aws_lb_listener_rule" "backend" {
+  listener_arn = aws_lb_listener.backend.arn
+  priority     = random_integer.priority.result
+
+  action {
+    type             = "forward"
+    target_group_arn = aws_lb_target_group.target-grp.arn
+  }
+
+  condition {
+    host_header {
+      values = ["${var.COMPONENT}-${var.ENV}-roboshop.internal"]
+    }
+  }
+}
