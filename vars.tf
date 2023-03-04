@@ -9,8 +9,8 @@ variable "PROJECT" {}
 variable "ENV" {}
 variable "PRIVATE_SUBNET_CIDR" {}
 variable "INSTANCE_COUNT" {}
-#variable "LB_ARN" {}
-#variable "LB_TYPE" {}
+variable "LB_ARN" {}
+variable "LB_TYPE" {}
 variable "PRIVATE_LB_DNS_NAME" {}
 variable "PRIVATE_HOSTED_ZONE_ID" {}
 variable "PRIVATE_LISTENER_ARN" {}
