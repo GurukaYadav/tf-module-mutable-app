@@ -17,6 +17,9 @@ variable "PRIVATE_LISTENER_ARN" {}
 variable "DOCDB_ENDPOINT" {
   default = "null"
 }
+variable "REDIS_ENDPOINT" {
+  default = "null"
+}
 
 
 
