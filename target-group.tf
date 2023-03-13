@@ -8,7 +8,7 @@ resource "aws_lb_target_group" "target-grp" {
     enabled = true
     healthy_threshold = 2
     unhealthy_threshold = 2
-    path = "/"
+    path = "/health"
     interval = 7
     timeout = 6
   }
