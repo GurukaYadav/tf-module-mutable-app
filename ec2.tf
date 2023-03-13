@@ -30,10 +30,10 @@ resource "aws_ec2_tag" "tag_name" {
 
 resource "null_resource" "null" {
   count = var.INSTANCE_COUNT
+  triggers = {
+    a = timestamp()
+  }
   provisioner "remote-exec" {
-    triggers = {
-      a = timestamp()
-    }
     connection {
       type     = "ssh"
       user     = jsondecode(data.aws_secretsmanager_secret_version.secret.secret_string)["SSH_USER"]
