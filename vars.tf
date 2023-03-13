@@ -23,6 +23,7 @@ variable "REDIS_ENDPOINT" {
 variable "RDS_ENDPOINT" {
   default = "null"
 }
+variable "PROMETHEUS_IP" {}
 
 
 
