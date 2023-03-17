@@ -30,9 +30,9 @@ resource "aws_ec2_tag" "tag_name" {
 
 resource "null_resource" "null" {
   count = var.INSTANCE_COUNT
-  triggers = {
-    a = timestamp()
-  }
+#  triggers = {
+#    a = timestamp()
+#  }
   provisioner "remote-exec" {
     connection {
       type     = "ssh"
